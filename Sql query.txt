@@ -1,0 +1,8 @@
+SELECT id, name, age
+FROM T1
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM T2
+    WHERE T1.id = T2.id
+)
+ORDER BY id;
